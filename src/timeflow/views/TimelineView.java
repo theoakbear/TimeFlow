@@ -4,14 +4,11 @@ import timeflow.app.ui.ComponentCluster;
 import timeflow.data.db.*;
 import timeflow.data.time.*;
 import timeflow.model.*;
-import timeflow.views.CalendarView.CalendarPanel;
-import timeflow.views.CalendarView.ScrollingCalendar;
 import timeflow.vis.*;
 import timeflow.vis.timeline.*;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.*;
 
 import javax.swing.*;
 
@@ -19,6 +16,10 @@ import java.util.*;
 
 public class TimelineView extends AbstractView {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -6307901462498240744L;
 	AxisRenderer grid;
 	TimelineRenderer timeline;
 	TimelineVisuals visuals;
@@ -223,6 +224,10 @@ public class TimelineView extends AbstractView {
 	
 	class ScrollingTimeline extends JPanel
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 5786234889758126259L;
 		JScrollBar bar;
 		public ScrollingTimeline()
 		{
@@ -268,6 +273,11 @@ public class TimelineView extends AbstractView {
 	
 	class TimelinePanel extends AbstractVisualizationView
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = -4774642564215362373L;
+
 		public TimelinePanel(TFModel model)
 		{
 			super(model);

@@ -4,6 +4,10 @@ import javax.swing.*;
 
 public abstract class ModelPanel extends JPanel implements TFListener {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -2915414205892458812L;
 	TFModel model;
 	
 	public ModelPanel(TFModel model)

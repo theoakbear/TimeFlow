@@ -2,14 +2,16 @@ package timeflow.app.actions;
 
 import timeflow.model.*;
 import timeflow.app.*;
-import timeflow.format.file.*;
 
 import javax.swing.*;
 
 import java.awt.Toolkit;
-import java.io.*;
 
 public abstract class TimeflowAction extends AbstractAction {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -1618259466434852664L;
 	TimeflowApp app;
 
     public TimeflowAction(TimeflowApp app, String text, ImageIcon icon, String desc) 
@@ -23,7 +25,7 @@ public abstract class TimeflowAction extends AbstractAction {
 	protected void accelerate(char c)
 	{
 		putValue(Action.ACCELERATOR_KEY,KeyStroke.getKeyStroke(c,
-			    Toolkit.getDefaultToolkit(  ).getMenuShortcutKeyMask(  ), false));
+			    Toolkit.getDefaultToolkit(  ).getMenuShortcutKeyMaskEx(  ), false));
 	}
 
 

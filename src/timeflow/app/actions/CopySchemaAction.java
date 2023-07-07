@@ -1,16 +1,16 @@
 package timeflow.app.actions;
 
-import timeflow.model.*;
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.*;
 import timeflow.data.db.*;
-import timeflow.format.field.FieldFormatCatalog;
 
 import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
 
 public class CopySchemaAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 3866258940227465794L;
 
 	public CopySchemaAction(TimeflowApp app)
 	{

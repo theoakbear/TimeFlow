@@ -1,6 +1,5 @@
 package timeflow.app.ui;
 
-import timeflow.data.time.*;
 import timeflow.data.db.*;
 import timeflow.format.field.*;
 import timeflow.format.file.DelimitedFormat;
@@ -12,14 +11,14 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.text.ParseException;
 import java.util.*;
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class ImportDelimitedPanel extends JFrame 
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 7576966848211797445L;
 	String fileName;
 	SchemaPanel schemaPanel;
 	boolean exitOnClose=false; // for testing!
@@ -103,6 +102,10 @@ public class ImportDelimitedPanel extends JFrame
 
 	class SchemaPanel extends JPanel
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 4374772362772173176L;
 		int numFields, rows;
 		String[][] data;
 		ArrayList<FieldPanel> panels=new ArrayList<FieldPanel>();
@@ -115,7 +118,7 @@ public class ImportDelimitedPanel extends JFrame
 				if (!fp.ignore.isSelected())
 					n++;
 			
-			Class[] types=new Class[n];
+			Class<?>[] types=new Class<?>[n];
 			String[] fieldNames=new String[n];
 			int[] index=new int[n];
 			if (source.trim().length()==0)
@@ -127,7 +130,7 @@ public class ImportDelimitedPanel extends JFrame
 				{
 					fieldNames[i]=fp.fieldName;
 					String typeChoice=(String)fp.typeChoices.getSelectedItem();
-					Class type=FieldFormatCatalog.javaClass(typeChoice);
+					Class<?> type=FieldFormatCatalog.javaClass(typeChoice);
 					System.out.println("Type: "+type+" for: "+typeChoice+" from "+fp.fieldName);
 					types[i]=type;
 					index[i]=j;
@@ -191,7 +194,7 @@ public class ImportDelimitedPanel extends JFrame
 			this.data=data;
 			
 			// analyze data.
-			Class[] guesses=FieldFormatGuesser.analyze(data, 1, 100);
+			Class<?>[] guesses=FieldFormatGuesser.analyze(data, 1, 100);
 			
 			// go through first row, which is headers.
 			String[] headers=data[0];
@@ -253,14 +256,18 @@ public class ImportDelimitedPanel extends JFrame
 	
 	class FieldPanel extends JPanel
 	{
-		JComboBox typeChoices;
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 569259261045062186L;
+		JComboBox<String> typeChoices;
 		String fieldName;
 		JCheckBox ignore;
 		JLabel fieldLabel;
 		int x1=5, y1=20, y3=150,x2=150, x3=150, x4=375, dh=2;
 
 		
-		FieldPanel(String fieldName, String[] sampleValues, Class typeGuess)
+		FieldPanel(String fieldName, String[] sampleValues, Class<?> typeGuess)
 		{
 			// just going with a null layout here, because it's a lot simpler!
 			
@@ -273,7 +280,7 @@ public class ImportDelimitedPanel extends JFrame
 			add(fieldLabel);
 			fieldLabel.setBounds(x1,y1,fieldLabel.getPreferredSize().width, fieldLabel.getPreferredSize().height);
 			
-			typeChoices=new JComboBox();
+			typeChoices=new JComboBox<String>();
 			for (String choice: FieldFormatCatalog.classNames())
 				typeChoices.addItem(choice);
 			typeChoices.setSelectedItem(FieldFormatCatalog.humanName(typeGuess));

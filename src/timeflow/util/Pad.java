@@ -4,6 +4,10 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Pad extends JPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -2719907987451385649L;
 	Dimension pref;
 	
 	public Pad(int w, int h)

@@ -1,34 +1,21 @@
 package timeflow.views;
 
-import timeflow.app.ui.EditRecordPanel;
-import timeflow.data.analysis.*;
-import timeflow.data.db.*;
-import timeflow.data.time.*;
-import timeflow.format.field.FieldFormatCatalog;
 import timeflow.model.*;
-import timeflow.views.*;
-import timeflow.views.ListView.LinkIt;
 
 import java.awt.*;
 import java.io.File;
-import java.net.URL;
-import java.util.Date;
 
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
-import javax.swing.JEditorPane;
-import javax.swing.JScrollPane;
-import javax.swing.UIManager;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.table.TableModel;
-import javax.swing.text.html.HTMLDocument;
-import javax.swing.text.html.StyleSheet;
 
 import timeflow.util.*;
 
 public class IntroView extends AbstractView {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -7505363998969862357L;
 	private JComponent controls;
 	Image image;
 	Image repeat;
@@ -58,7 +45,6 @@ public class IntroView extends AbstractView {
 		// draw image and extensible background, so it looks cool on a big screen.
 		if (image!=null && repeat!=null)
 		{
-			int ih=image.getHeight(null);
 			int iw=image.getWidth(null);
 			int rw=repeat.getWidth(null);
 			g.drawImage(image,0,0,null);

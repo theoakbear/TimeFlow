@@ -3,14 +3,16 @@ package timeflow.app.ui.filter;
 import javax.swing.*;
 import java.awt.event.*;
 
-import timeflow.data.db.*;
-import timeflow.data.time.*;
 import timeflow.model.*;
 
 import java.awt.*;
 
 public class SearchPanel extends ModelPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 9188707890154470754L;
 	JTextField entry;
     JCheckBox invert;
 	

@@ -6,6 +6,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Mouseover extends Rectangle {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 6718082011885810393L;
 	public Object thing;
 	public Mouseover(Object thing, int x, int y, int w, int h)
 	{
@@ -20,7 +24,7 @@ public class Mouseover extends Rectangle {
 		g.fill(this);
 	}
 	
-	protected void draw(Graphics2D g, int maxW, int maxH, Display display, ArrayList labels, int numLines)
+	protected void draw(Graphics2D g, int maxW, int maxH, Display display, ArrayList<?> labels, int numLines)
 	{
 		if (labels==null || labels.size()==0)
 			return;

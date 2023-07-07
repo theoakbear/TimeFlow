@@ -1,17 +1,17 @@
 package timeflow.app.actions;
 
-import timeflow.model.*;
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.*;
-import timeflow.data.db.*;
-import timeflow.format.field.FieldFormatCatalog;
 import timeflow.format.file.DelimitedFormat;
 
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 
 public class ImportFromPasteAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 5881868522198385755L;
 
 	public ImportFromPasteAction(TimeflowApp app)
 	{

@@ -10,10 +10,15 @@ import timeflow.model.ModelPanel;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 public class FilterCategoryPanel extends FilterDefinitionPanel 
 {
-	public JList dataList=new JList();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -7666417790082827568L;
+	public JList<String> dataList = new JList<String>();
 	Field field;
 	
 	public FilterCategoryPanel(final Field field, final ModelPanel parent)
@@ -93,8 +98,13 @@ public class FilterCategoryPanel extends FilterDefinitionPanel
 		   dataList.addMouseListener(m);
 		
 		dataList.setCellRenderer(new DefaultListCellRenderer() {
+			/**
+			 *
+			 */
+			private static final long serialVersionUID = 3733335263445333561L;
+
 			@Override
-			public Component getListCellRendererComponent(JList list,
+			public Component getListCellRendererComponent(JList<?> list,
 					Object value, int index, boolean isSelected,
 					boolean cellHasFocus) {
 				Component c=super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
@@ -133,15 +143,15 @@ public class FilterCategoryPanel extends FilterDefinitionPanel
 
 	@Override
 	public ActFilter defineFilter() {
-		Object[] o=dataList.getSelectedValues();	
-		if (o==null || o.length==0)
+		List<String> o=dataList.getSelectedValuesList();	
+		if (o==null || o.size()==0)
 			return null;
 		
-		int n=o.length;
+		int n=o.size();
 		String[] s=new String[n];
 		for (int i=0; i<n; i++)
 		{
-			String w=(String)o[i];
+			String w=o.get(i);
 			int m=w.lastIndexOf('-');
 			s[i]=w.substring(0, m-1);
 			if ("(missing)".equals(s[i]))

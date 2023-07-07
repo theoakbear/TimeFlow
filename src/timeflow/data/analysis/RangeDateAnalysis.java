@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import timeflow.data.analysis.DBAnalysis.*;
 import timeflow.data.db.*;
-import timeflow.data.db.filter.*;
 import timeflow.data.time.RoughTime;
 
 public class RangeDateAnalysis implements FieldAnalysis {
@@ -56,7 +55,7 @@ public class RangeDateAnalysis implements FieldAnalysis {
 	}
 
 	@Override
-	public boolean canHandleType(Class type) {
+	public boolean canHandleType(Class<?> type) {
 		return type==RoughTime.class;
 	}
 }

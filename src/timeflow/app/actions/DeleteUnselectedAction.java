@@ -1,6 +1,5 @@
 package timeflow.app.actions;
 
-import timeflow.model.*;
 import timeflow.app.ui.*;
 import timeflow.app.*;
 
@@ -9,6 +8,11 @@ import javax.swing.*;
 
 
 public class DeleteUnselectedAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -6750667301851286818L;
 
 	public DeleteUnselectedAction(TimeflowApp app)
 	{

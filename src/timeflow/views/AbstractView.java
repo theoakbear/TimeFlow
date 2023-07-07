@@ -10,7 +10,11 @@ import java.awt.*;
 // superclass of all timeline views
 public abstract class AbstractView extends ModelPanel
 {
-	protected boolean ignoreEventsWhenInvisible=true;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 99688815100433858L;
+	protected boolean ignoreEventsWhenInvisible = true;
 	JPanel panel;
 	ActDB lastDrawn, lastNotified;
 	
@@ -34,6 +38,11 @@ public abstract class AbstractView extends ModelPanel
 		panel.add(_getControls(), BorderLayout.CENTER);
 		JLabel controlLabel=new JLabel(" "+getName()+" Controls")
 		{
+			/**
+			 *
+			 */
+			private static final long serialVersionUID = -7590020090916525449L;
+
 			public Dimension getPreferredSize()
 			{
 				return new Dimension(30,30);

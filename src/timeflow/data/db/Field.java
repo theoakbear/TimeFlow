@@ -3,17 +3,17 @@ package timeflow.data.db;
 
 public class Field {
 	private String name;
-	private Class type;
+	private Class<? extends Object> type;
 	int index;
 	private int recommendedSize=-1;
 	
-	public Field(String name, Class type)
+	public Field(String name, Class<? extends Object> type)
 	{
 		this.name=name;
 		this.type=type;
 	}
 	
-	public Field(String name, Class type, int recommendedSize)
+	public Field(String name, Class<? extends Object> type, int recommendedSize)
 	{
 		this.name=name;
 		this.type=type;
@@ -38,7 +38,7 @@ public class Field {
 		return name;
 	}
 	
-	public Class getType()
+	public Class<? extends Object> getType()
 	{
 		return type;
 	}

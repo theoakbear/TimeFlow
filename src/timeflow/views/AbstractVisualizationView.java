@@ -18,6 +18,10 @@ import javax.swing.*;
 
 public abstract class AbstractVisualizationView extends JPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -6947800002083296155L;
 	Image buffer;
 	Graphics2D graphics;
 	Point mouse=new Point(-10000,0), firstMouse=new Point();

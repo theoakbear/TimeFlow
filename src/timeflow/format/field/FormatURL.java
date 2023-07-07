@@ -20,7 +20,7 @@ public class FormatURL extends FieldFormat
 	}
 
 	@Override
-	public Class getType() {
+	public Class<?> getType() {
 		return URL.class;
 	}	
 	

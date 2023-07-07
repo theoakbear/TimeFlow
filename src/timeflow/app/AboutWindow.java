@@ -4,11 +4,10 @@ import timeflow.model.*;
 
 import java.awt.*;
 import java.io.File;
-import java.util.*;
 import javax.imageio.*;
 
 public class AboutWindow extends Window {
-	
+	public static final long serialVersionUID = 202012211021L;
 	Image image;
 	Display display;
 	int w=640, h=380;

@@ -21,13 +21,18 @@ public class TFEvent {
 	
 	public boolean affectsSchema()
 	{
+		boolean result;
 		switch (type){
 			case DATABASE_CHANGE: 
 			case FIELD_ADD:
 			case FIELD_DELETE:
-			case FIELD_CHANGE: return true;
+			case FIELD_CHANGE: 
+				result=true;
+				break;
+			default:
+				result=false;
 		}
-		return false;
+		return result;
 	}
 	
 	public boolean affectsRowSet()

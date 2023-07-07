@@ -1,9 +1,5 @@
 package timeflow.format.field;
 
-import java.net.URL;
-
-import timeflow.data.time.*;
-
 public abstract class FieldFormat {	
 	protected String lastInput;
 	protected Object lastValue;
@@ -24,7 +20,7 @@ public abstract class FieldFormat {
 	
 	protected abstract Object _parse(String s) throws Exception;
 	public abstract String format(Object o);
-	public abstract Class getType();
+	public abstract Class<?> getType();
 	public abstract double scoreFormatMatch(String s);
 	public abstract String getHumanName();
 

@@ -6,6 +6,10 @@ import java.awt.event.*;
 
 public class WaitingDialog extends JFrame {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1849925921579273032L;
 	Timer timer;
 	
 	public static void main(String[] args)
@@ -34,7 +38,11 @@ public class WaitingDialog extends JFrame {
 	
 	class Throbber extends JPanel implements ActionListener
 	{
-		int count=0;
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 5247349473772119553L;
+		int count = 0;
 		public void paintComponent(Graphics g)
 		{
 			int w=getSize().width, h=getSize().height;

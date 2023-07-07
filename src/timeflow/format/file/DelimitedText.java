@@ -4,8 +4,6 @@ import java.util.*;
 
 import timeflow.util.*;
 
-import timeflow.model.Display;
-
 public class DelimitedText {
 	private char delimiter;
 	
@@ -25,13 +23,15 @@ public class DelimitedText {
 	{
 		ArrayList<String[]> results=new ArrayList<String[]>();
 		int n=text.length();
-		StringBuffer currentToken=new StringBuffer();
+		StringBuilder currentToken=new StringBuilder();
 		ArrayList<String> currentList=new ArrayList<String>();
-		
+		char[] textBuffer = text.toCharArray();
+
+
 		boolean quoted=false;
 		for (int i=0; i<n; i++)
 		{
-			char c=text.charAt(i);
+			char c=textBuffer[i];
 			if (quoted)
 			{
 				if (c=='"')
@@ -41,7 +41,7 @@ public class DelimitedText {
 						quoted=false;
 						continue;
 					}
-					char next=text.charAt(i+1);
+					char next=textBuffer[i+1];
 					if (next=='"') // a quoted quote.
 					{
 						currentToken.append('"');
@@ -60,7 +60,7 @@ public class DelimitedText {
 						// so that is what we will choose.
 						
 						//System.out.println("next++:  '"+text.charAt(i+1)+"'="+(int)text.charAt(i+1));
-						if (i<n-1 && isBreak(text.charAt(i+1)))
+						if (i<n-1 && isBreak(textBuffer[i+1]))
 						{
 							quoted=false;
 						}
@@ -75,7 +75,7 @@ public class DelimitedText {
 						results.add((String[])currentList.toArray(new String[0]));
 						currentList=new ArrayList<String>();
 						i++;
-						if (i<n-1 && isBreak(text.charAt(i+1)))
+						if (i<n-1 && isBreak(textBuffer[i+1]))
 							i++;
 						continue;
 					}
@@ -117,7 +117,7 @@ public class DelimitedText {
 				currentToken.setLength(0);
 				results.add((String[])currentList.toArray(new String[0]));
 				currentList=new ArrayList<String>();
-				if (i<n-1 && (text.charAt(i+1)=='\n' || text.charAt(i+1)=='\r'))
+				if (i<n-1 && (textBuffer[i+1]=='\n' || textBuffer[i+1]=='\r'))
 					i++;
 				continue;
 			}

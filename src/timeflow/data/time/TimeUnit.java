@@ -13,11 +13,10 @@ public class TimeUnit {
 	public static final TimeUnit HOUR=new TimeUnit("Hours", Calendar.HOUR_OF_DAY, 60*60*1000L, "kk:mm", "MMM d yyyy kk:mm");
 	public static final TimeUnit MINUTE=new TimeUnit("Minutes", Calendar.MINUTE, 60*1000L, ":mm", "MMM d yyyy kk:mm");
 	public static final TimeUnit SECOND=new TimeUnit("Seconds", Calendar.SECOND, 1000L, ":ss", "MMM d yyyy kk:mm:ss");
+	public static final TimeUnit MILLISECOND=new TimeUnit("Milliseconds", Calendar.MILLISECOND, 1L, ":SSS", "MMM d yyyy kk:mm:ss.SSS");
 	public static final TimeUnit DECADE=multipleYears(10);
 	public static final TimeUnit CENTURY=multipleYears(100);
-	
-	private static final double DAY_SIZE=24*60*60*1000L;
-	
+		
 	private int quantity;	
 	private long roughSize;
 	private SimpleDateFormat format, fullFormat;

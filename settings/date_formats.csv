@@ -1,0 +1,28 @@
+yyy-MM-dd'T'hh:mm:ss'Z', SECOND
+yyyy-MM-dd HH:mm:ss.SSS, MILLISECOND
+MMM dd yyyy HH:mm:ss, SECOND
+MM/dd/yyyy HH:mm:ss, SECOND
+MMM dd yyyy HH:mm, SECOND
+MMM/dd/yyyy HH:mm, SECOND
+MM/dd/yy HH:mm, SECOND
+MMM dd yyyy HH:mm:ss zzzzzzzz, SECOND
+EEE MMM dd HH:mm:ss zzzzzzzz yyyy, SECOND
+EEE MMM dd HH:mm:ss zzzzzzzz yyyy, SECOND
+yyyy-MM-ddzzzzzzzzzz, DAY
+MM-dd-yyyy, DAY
+yyyy-MM-dd, DAY
+yyyyMMdd, DAY
+MM-dd-yy, DAY
+dd-MMM-yy, DAY
+MM-dd-yyyy, DAY
+MM/dd/yy, DAY
+MM/dd/yyyy, DAY
+dd MMM yyyy, DAY
+MMM dd yyyy, DAY
+EEE MMM dd zzzzzzzz yyyy, DAY
+EEE MMM dd yyyy, DAY
+MMM-yy, MONTH
+MMM yy, MONTH
+MMM/yy, MONTH
+yyyy, YEAR
+yyyy GG, YEAR

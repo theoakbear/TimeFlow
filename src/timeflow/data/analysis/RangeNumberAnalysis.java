@@ -2,7 +2,6 @@ package timeflow.data.analysis;
 
 import timeflow.data.analysis.DBAnalysis.*;
 import timeflow.data.db.*;
-import timeflow.data.db.filter.*;
 import java.text.*;
 
 public class RangeNumberAnalysis implements FieldAnalysis {
@@ -79,7 +78,7 @@ public class RangeNumberAnalysis implements FieldAnalysis {
 	}
 
 	@Override
-	public boolean canHandleType(Class type) {
+	public boolean canHandleType(Class<?> type) {
 		return type==Double.class;
 	}
 }

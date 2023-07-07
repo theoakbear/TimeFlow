@@ -2,7 +2,6 @@ package timeflow.app.actions;
 
 import timeflow.model.*;
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.*;
 import timeflow.data.db.*;
 
 import java.awt.event.*;
@@ -10,6 +9,11 @@ import javax.swing.*;
 import java.util.*;
 
 public class DeleteFieldAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -4571084937101608475L;
 
 	public DeleteFieldAction(TimeflowApp app)
 	{

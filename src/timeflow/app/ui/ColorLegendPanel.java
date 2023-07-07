@@ -3,21 +3,22 @@ package timeflow.app.ui;
 import timeflow.model.*;
 import timeflow.app.ui.filter.FilterCategoryPanel;
 import timeflow.data.db.*;
-import timeflow.data.db.filter.FieldValueFilter;
 import timeflow.data.db.filter.ValueFilter;
-import timeflow.data.time.*;
 
 import timeflow.util.*;
 
 import java.awt.*;
 
-import javax.swing.JLabel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class ColorLegendPanel extends ModelPanel {
 	
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -435470139540371372L;
 	Field oldColor;
 
 	public ColorLegendPanel(TFModel model)

@@ -50,7 +50,7 @@ public class FormatDouble extends FieldFormat
 
 
 	@Override
-	public Class getType() {
+	public Class<?> getType() {
 		return Double.class;
 	}	
 	@Override
@@ -82,14 +82,11 @@ public class FormatDouble extends FieldFormat
 		
 		if (n==0)
 			return -.1;
-		int ok=0;
 		int bad=0;
 		for (int i=0; i<n; i++)
 		{
 			char c=s.charAt(i);
-			if (Character.isDigit(c) || c=='.' || c==',' || c=='-' || c=='$' || c=='%')
-				ok++;
-			else
+			if (!(Character.isDigit(c) || c=='.' || c==',' || c=='-' || c=='$' || c=='%'))
 				bad++;
 		}
 		return 4-5*bad;

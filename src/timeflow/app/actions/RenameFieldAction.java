@@ -1,7 +1,5 @@
 package timeflow.app.actions;
 
-import timeflow.model.*;
-import timeflow.app.ui.*;
 import timeflow.app.*;
 import timeflow.data.db.*;
 
@@ -10,9 +8,12 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-import java.util.*;
-
 public class RenameFieldAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1831762346670929670L;
 
 	public RenameFieldAction(TimeflowApp app)
 	{
@@ -24,9 +25,8 @@ public class RenameFieldAction extends TimeflowAction {
 		JPanel panel=new JPanel();
 		panel.setLayout(new GridLayout(4,1));
 		panel.add(new JLabel("Choose a field and type a new name."));
-		final JComboBox fieldChoices=new JComboBox();
+		final JComboBox<String> fieldChoices=new JComboBox<String>();
 		panel.add(fieldChoices);
-		ArrayList<String> options=new ArrayList<String>();
 		for (Field f: getModel().getDB().getFields())
 			fieldChoices.addItem(f.getName());
 		JPanel inputPanel=new JPanel();
@@ -39,10 +39,7 @@ public class RenameFieldAction extends TimeflowAction {
 
 		nameField.addKeyListener(new KeyListener() {
 			@Override
-			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void keyPressed(KeyEvent e) {}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
@@ -60,10 +57,7 @@ public class RenameFieldAction extends TimeflowAction {
 			}
 
 			@Override
-			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}});
+			public void keyTyped(KeyEvent e) {}});
 		
 		panel.add(inputPanel);
 		feedback.setForeground(Color.gray);

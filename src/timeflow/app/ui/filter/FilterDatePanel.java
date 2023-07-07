@@ -2,7 +2,6 @@ package timeflow.app.ui.filter;
 
 import timeflow.data.db.*;
 import timeflow.data.db.filter.*;
-import timeflow.model.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,6 +18,10 @@ import javax.swing.*;
 
 public class FilterDatePanel  extends FilterDefinitionPanel 
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -4262930166809328217L;
 	BabyHistogram histogram;
 	Field field;
 	JTextField startEntry;

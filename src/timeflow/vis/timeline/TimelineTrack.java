@@ -1,12 +1,11 @@
 package timeflow.vis.timeline;
 
 import timeflow.vis.VisualAct;
-import timeflow.data.time.*;
 import timeflow.util.*;
 
 import java.util.*;
 
-public class TimelineTrack implements Comparable
+public class TimelineTrack implements Comparable<TimelineTrack>
 {
 	String label;
 	List<VisualAct> visualActs=new ArrayList<VisualAct>();
@@ -103,7 +102,7 @@ public class TimelineTrack implements Comparable
 	}
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(TimelineTrack o) {
 		return ((TimelineTrack)o).size()-size();
 	}
 }

@@ -10,7 +10,7 @@ import java.util.*;
 
 import timeflow.util.*;
 
-public class VisualAct implements Comparable 
+public class VisualAct implements Comparable<VisualAct>
 {
 	Color color;
 	String label;
@@ -209,7 +209,7 @@ public class VisualAct implements Comparable
 
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(VisualAct o) {
 		return RoughTime.compare(start, ((VisualAct)o).start);
 		//start.compareTo(((VisualAct)o).start);
 	}
@@ -217,6 +217,11 @@ public class VisualAct implements Comparable
 	class VisualActMouseover extends Mouseover
 	{
 		
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 8816144267095141386L;
+
 		public VisualActMouseover(int x, int y, int w, int h) {
 			super(VisualAct.this, x, y, w, h);
 		}
@@ -227,7 +232,7 @@ public class VisualAct implements Comparable
 			Act a=getAct();
 			ActDB db=a.getDB();
 			java.util.List<Field> fields=db.getFields();
-			ArrayList labels=new ArrayList();
+			ArrayList<Object> labels=new ArrayList<Object>();
 			int charWidth=40;
 			int numLines=1;
 			if (VisualAct.this instanceof GroupVisualAct)

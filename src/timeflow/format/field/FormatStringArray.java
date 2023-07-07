@@ -38,7 +38,7 @@ public class FormatStringArray extends FieldFormat
 	}
 
 	@Override
-	public Class getType() {
+	public Class<?> getType() {
 		return String[].class;
 	}	
 

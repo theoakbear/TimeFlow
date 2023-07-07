@@ -2,7 +2,6 @@ package timeflow.data.db;
 
 import java.util.*;
 
-import timeflow.data.db.*;
 import timeflow.data.db.filter.ActFilter;
 
 public class BasicDB implements ActDB {
@@ -39,7 +38,7 @@ public class BasicDB implements ActDB {
 	}
 	
 	@Override
-	public Field addField(String name, Class type) {
+	public Field addField(String name, Class<?> type) {
 		Field field=new Field(name, type);
 		schema.add(field);
 		return field;
@@ -73,7 +72,7 @@ public class BasicDB implements ActDB {
 	}
 
 	@Override
-	public List<Field> getFields(Class type) {
+	public List<Field> getFields(Class<?> type) {
 		return schema.getFields(type);
 	}
 

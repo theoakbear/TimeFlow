@@ -17,7 +17,11 @@ import java.awt.*;
 
 public class FilterControlPanel extends ModelPanel
 {
-	FacetSubpanel inside=new FacetSubpanel();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -329792610230408256L;
+	FacetSubpanel inside = new FacetSubpanel();
 	SearchPanel searchPanel;
 	boolean inverted=false;
 	JMenu menuToSyncWith;
@@ -92,7 +96,11 @@ public class FilterControlPanel extends ModelPanel
 	class FacetSubpanel extends JPanel
 	{	
 		
-		ArrayList<Field> facets=new ArrayList<Field>();
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 3117158303987305409L;
+		ArrayList<Field> facets = new ArrayList<Field>();
 		HashMap<Field, FilterDefinitionPanel> facetTable=new HashMap<Field, FilterDefinitionPanel>();		
 		
 		FacetSubpanel()

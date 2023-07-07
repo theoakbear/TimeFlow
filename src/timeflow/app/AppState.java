@@ -60,7 +60,8 @@ public class AppState {
 		recentFiles.addFirst(this.currentFile);
 		
 		// set current dir, too.
-		this.currentDir=currentDir;
+		this.currentDir=currentFile.getParentFile();
+		//this.currentDir=currentDir;
 	}
 
 	public File getCurrentDir() {

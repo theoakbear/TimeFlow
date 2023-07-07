@@ -1,7 +1,6 @@
 package timeflow.data.db.filter;
 
 import timeflow.data.db.*;
-import timeflow.data.time.*;
 
 public class NumericRangeFilter extends ActFilter {
 	

@@ -2,13 +2,17 @@ package timeflow.app.actions;
 
 import timeflow.model.*;
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.*;
 
 import java.awt.event.*;
 import javax.swing.*;
 
 
 public class EditSourceAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 7790356224730809967L;
 
 	public EditSourceAction(TimeflowApp app)
 	{

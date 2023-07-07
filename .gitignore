@@ -2,3 +2,12 @@ bin
 local_*
 settings/info.txt
 TimeFlow_*
+build/
+.gradle/
+.DS_Store
+.settings/
+\.classpath
+\.project
+gradle/
+gradlew
+gradlew.bat

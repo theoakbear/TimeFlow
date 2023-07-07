@@ -3,7 +3,6 @@ package timeflow.app.ui;
 
 import timeflow.app.ui.filter.FilterControlPanel;
 import timeflow.data.db.*;
-import timeflow.data.time.*;
 import timeflow.model.*;
 
 import javax.swing.*;
@@ -15,6 +14,10 @@ import java.awt.event.*;
 import java.util.List;
 
 public class GlobalDisplayPanel extends ModelPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 8019335198098751512L;
 	JPanel encodings=new JPanel();
 	JPanel localControls=new JPanel();
 	JPanel globalControls=new JPanel();
@@ -47,6 +50,11 @@ public class GlobalDisplayPanel extends ModelPanel {
 		
 		JLabel label=new JLabel(" Global Controls", JLabel.LEFT)
 		{
+			/**
+			 *
+			 */
+			private static final long serialVersionUID = 1002047432545316052L;
+
 			public Dimension getPreferredSize()
 			{
 				return new Dimension(30,30);
@@ -97,7 +105,7 @@ public class GlobalDisplayPanel extends ModelPanel {
 		makeChooser(VirtualField.SIZE, "Dot Size", "None", measures);
 	}
 	
-	private JComboBox makeChooser(final String alias, String title, String nothingLabel, List<Field> fields) {
+	private JComboBox<String> makeChooser(final String alias, String title, String nothingLabel, List<Field> fields) {
 		if (fields.size()==0)
 			return null;
 		JPanel panel=new JPanel();
@@ -111,9 +119,17 @@ public class GlobalDisplayPanel extends ModelPanel {
 		panel.add(rightPad, BorderLayout.EAST);
 		rightPad.setBackground(Color.white);
 		
-		panel.add(new JLabel(" "+title) {public Dimension getPreferredSize() {return new Dimension(60,25);}}, 
-				BorderLayout.WEST);
-		final JComboBox c=new JComboBox();
+		panel.add(new JLabel(" "+title) {
+			/**
+			*
+			*/
+			private static final long serialVersionUID = 1935291335250125216L;
+
+			public Dimension getPreferredSize() {
+				return new Dimension(60, 25);
+			}
+		}, BorderLayout.WEST);
+		final JComboBox<String> c=new JComboBox<String>();
 		
 		if (nothingLabel!=null)
 			c.addItem(nothingLabel);

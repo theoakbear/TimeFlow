@@ -16,7 +16,7 @@ public class Display {
 	HashMap<String, String> strings=new HashMap<String, String>();
 	HashMap<String, Integer> ints=new HashMap<String, Integer>();
 	HashMap<String, Color> colors=new HashMap<String, Color>();
-	HashMap<Class, String> classLabel=new HashMap<Class, String>();
+	HashMap<Class<?>, String> classLabel=new HashMap<Class<?>, String>();
 	Color fallback=new Color(0,53,153,128);
 	
 	String fontName="Verdana";
@@ -29,7 +29,6 @@ public class Display {
 	Font timeLabelFont=tinyFont;
 	
 	FontMetrics hugeFontMetrics=Toolkit.getDefaultToolkit().getFontMetrics(hugeFont);
-	FontMetrics bigFontMetrics=Toolkit.getDefaultToolkit().getFontMetrics(bigFont);
 	FontMetrics plainFontMetrics=Toolkit.getDefaultToolkit().getFontMetrics(plainFont);
 	FontMetrics boldFontMetrics=Toolkit.getDefaultToolkit().getFontMetrics(boldFont);
 	FontMetrics tinyFontMetrics=Toolkit.getDefaultToolkit().getFontMetrics(tinyFont);

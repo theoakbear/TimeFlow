@@ -14,6 +14,11 @@ import timeflow.model.ModelPanel;
 import timeflow.util.*;
 
 public class FilterTitle extends JPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 549225480024662017L;
+
 	public FilterTitle(final Field field, final ModelPanel parent, boolean dots)
 	{
 		this(field.getName(), field, parent, dots);

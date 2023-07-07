@@ -24,7 +24,7 @@ public abstract class ActComparator implements Comparator<Act> {
 	
 	public static ActComparator by(Field field)
 	{
-		Class type=field.getType();
+		Class<?> type=field.getType();
 		if (type==Double.class)
 			return new NumberComparator(field);
 		if (type==String[].class)

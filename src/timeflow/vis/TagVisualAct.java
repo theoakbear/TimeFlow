@@ -3,7 +3,6 @@ package timeflow.vis;
 import timeflow.data.db.*;
 
 import java.awt.*;
-import java.util.*;
 
 public class TagVisualAct extends VisualAct {
 	

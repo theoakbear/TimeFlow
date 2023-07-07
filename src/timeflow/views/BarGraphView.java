@@ -1,9 +1,7 @@
 package timeflow.views;
 
 import timeflow.model.*;
-import timeflow.views.ListView.LinkIt;
 import timeflow.data.db.*;
-import timeflow.data.time.*;
 
 import javax.swing.*;
 
@@ -15,12 +13,16 @@ import java.util.*;
 
 public class BarGraphView extends AbstractView {
 	
-	BarGraph graph=new BarGraph();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 3414926418489797791L;
+	BarGraph graph = new BarGraph();
 	JPanel controls;
 	ArrayList<BarData> bars;
 	enum Aggregate {TOTAL, AVERAGE, COUNT};
 	Aggregate agg;
-	JComboBox splitFieldChoice, numFieldChoice;
+	JComboBox<String> splitFieldChoice, numFieldChoice;
 	
 
 	public BarGraphView(TFModel model) {
@@ -63,7 +65,7 @@ public class BarGraphView extends AbstractView {
 		top.setBounds(x,y,cw,ch);
 		y+=ch+pad;
 		
-		splitFieldChoice=new JComboBox();
+		splitFieldChoice=new JComboBox<String>();
 		String splitSelection=null;
 		for (Field f: DBUtils.categoryFields(model.getDB()))
 		{
@@ -90,7 +92,7 @@ public class BarGraphView extends AbstractView {
 		showLabel.setBounds(x,y,cw,ch);
 		y+=ch+pad;
 		
-		numFieldChoice=new JComboBox();
+		numFieldChoice=new JComboBox<String>();
 		numFieldChoice.addItem("Number of events");
 		final ArrayList<Field> valueFields=new ArrayList<Field>();
 		for (Field f:model.getDB().getFields(Double.class))
@@ -167,7 +169,11 @@ public class BarGraphView extends AbstractView {
 	
 	class BarGraph extends JPanel
 	{
-		int numVals=0;
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 6843018760638635863L;
+		int numVals = 0;
 		int rowHeight=30;
 		int barHeight=20;
 		int labelX=10, barLeft=300, barRight;
@@ -293,7 +299,7 @@ public class BarGraphView extends AbstractView {
 				g.drawString(label, labelX, ty);
 				
 				// label number
-				String numLabel=display.format(data.num);
+				String numLabel=Display.format(data.num);
 				g.drawString(numLabel, numX+70-fm.stringWidth(numLabel), ty);
 				
 				// draw bar.

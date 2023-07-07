@@ -10,11 +10,20 @@ import java.awt.event.*;
 
 public class EditValuePanel extends JPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -93608479584627707L;
 	FieldFormat parser;
 	boolean longField;
 	
 	JLabel feedback=new JLabel()
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 1512063085186431506L;
+
 		public Dimension getPreferredSize()
 		{
 			Dimension d=super.getPreferredSize();
@@ -25,7 +34,7 @@ public class EditValuePanel extends JPanel
 	static final String space="   ";
 	JTextComponent input;
 	
-	public EditValuePanel(String name, Object startValue, Class type, boolean longField)
+	public EditValuePanel(String name, Object startValue, Class<? extends Object> type, boolean longField)
 	{
 		parser=FieldFormatCatalog.getFormat(type);
 		

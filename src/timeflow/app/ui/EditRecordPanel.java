@@ -1,7 +1,6 @@
 package timeflow.app.ui;
 
 import timeflow.model.*;
-import timeflow.app.ui.ImportDelimitedPanel.SchemaPanel;
 import timeflow.data.time.*;
 import timeflow.data.db.*;
 
@@ -15,6 +14,10 @@ import java.awt.event.ActionListener;
 // panel with form for editing a given database entry
 public class EditRecordPanel extends JPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 7531877184643641250L;
 	Act act;
 	HashMap<Field, EditValuePanel> fieldUI=new HashMap<Field, EditValuePanel>();
 	JButton submit, cancel;
@@ -88,7 +91,6 @@ public class EditRecordPanel extends JPanel
 		add(scroller, BorderLayout.CENTER);
 		
 		java.util.List<Field> fields=act.getDB().getFields();
-		int n=fields.size();
 		entryPanel.setLayout(null);
 		
 		DBUtils.setRecSizesFromCurrent(act.getDB());

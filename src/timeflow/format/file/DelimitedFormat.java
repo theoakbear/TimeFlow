@@ -7,13 +7,11 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 import timeflow.data.db.Act;
 import timeflow.data.db.ActDB;
-import timeflow.data.db.DBUtils;
 import timeflow.data.db.Field;
 import timeflow.data.time.RoughTime;
 import timeflow.model.Display;
@@ -46,18 +44,7 @@ public class DelimitedFormat {
 		char c=count(beginning, '\t')>count(beginning, ',') ? '\t' : ',';
 		return new DelimitedFormat(c).readTokensFromString(text, messages);
 	}
-	
-	private static String[] removeBlankLines(String[] lines)
-	{
-		List<String> good=new ArrayList<String>();
-		for (int i=0; i<lines.length; i++)
-		{
-			if (!(lines[i]==null || lines[i].trim().length()==0))
-				good.add(lines[i]);
-		}
-		return (String[])good.toArray(new String[0]);
-	}
-	
+		
 	private static int count(String s, char c)
 	{
 		int n=0;

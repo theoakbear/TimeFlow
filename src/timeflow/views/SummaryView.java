@@ -16,6 +16,10 @@ import javax.swing.*;
 
 public class SummaryView extends AbstractView {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 4592190750883173211L;
 	private JEditorPane analysisDisplay;
 	private FieldAnalysis[] fieldAnalyzers=new FieldAnalysis[]
     {
@@ -48,7 +52,6 @@ public class SummaryView extends AbstractView {
 	
 	void makeHtml()
 	{
-		Display d=getModel().getDisplay();
 		ActDB db=getModel().getDB();
 		ActList acts=getModel().getActs();
 		StringBuffer page=new StringBuffer();

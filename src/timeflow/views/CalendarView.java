@@ -14,12 +14,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CalendarView extends AbstractView {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 4131919444354195926L;
 	CalendarPanel calendarPanel;
 	ScrollingCalendar scroller;
 	CalendarVisuals visuals;
@@ -214,6 +216,10 @@ public class CalendarView extends AbstractView {
 	
 	class ScrollingCalendar extends JPanel
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 3760153878922824072L;
 		JScrollBar bar;
 		public ScrollingCalendar()
 		{
@@ -275,6 +281,11 @@ public class CalendarView extends AbstractView {
 	
 	class CalendarPanel extends AbstractVisualizationView
 	{		
+
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 7955598114887670086L;
 
 		CalendarPanel(TFModel model)
 		{

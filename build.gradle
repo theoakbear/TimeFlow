@@ -1,0 +1,29 @@
+plugins {
+    id 'eclipse'
+    id 'application'
+}
+
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+sourceSets {
+    main.java.srcDirs = ['src']
+    main.resources.srcDirs = ['images', 'settings']
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    archiveBaseName = 'TimeFlow'
+    archiveVersion = '1.0.0'
+    manifest {
+        attributes (
+            'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+            'Main-Class': 'timeflow.app.TimeflowAppLauncher'
+        )
+    }    
+}
+
+mainClassName = 'timeflow.app.TimeflowAppLauncher'

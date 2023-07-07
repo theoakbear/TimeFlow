@@ -1,7 +1,6 @@
 package timeflow.app.ui;
 
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +9,11 @@ import java.util.*;
 // custom JTabbedPane-like thing.
 public class LinkTabPane extends JPanel {
 	
-	ArrayList<String> tabNames=new ArrayList<String>();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -5443874186523186191L;
+	ArrayList<String> tabNames = new ArrayList<String>();
 	HashMap<String, JComponent> tabMap=new HashMap<String, JComponent>();
 	String currentName;
 	CardLayout cards=new CardLayout();
@@ -73,6 +76,10 @@ public class LinkTabPane extends JPanel {
 	
 	class LinkTop extends JPanel
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = -6190667542685121348L;
 		int left, right;
 		ArrayList<HotLink> leftHots=new ArrayList<HotLink>();
 		ArrayList<HotLink> rightHots=new ArrayList<HotLink>();
@@ -191,7 +198,11 @@ public class LinkTabPane extends JPanel {
 	    
 	    class HotLink extends Rectangle
 	    {
-	    	String s;
+	    	/**
+			 *
+			 */
+			private static final long serialVersionUID = -7981949228727229441L;
+			String s;
 	    	HotLink(String s, int x, int y, int w, int h)
 	    	{
 	    		super(x,y,w,h);

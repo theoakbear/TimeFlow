@@ -1,7 +1,6 @@
 package timeflow.data.analysis;
 
 import timeflow.util.*;
-import timeflow.data.time.*;
 import timeflow.data.analysis.DBAnalysis.InterestLevel;
 import timeflow.data.db.*;
 import java.util.*;
@@ -70,7 +69,7 @@ public class FrequencyAnalysis implements FieldAnalysis {
 	}
 
 	@Override
-	public boolean canHandleType(Class type) {
+	public boolean canHandleType(Class<?> type) {
 		return type==Double.class || type==String.class || type==String[].class;
 	}
 }

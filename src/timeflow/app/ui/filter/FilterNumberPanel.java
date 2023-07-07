@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import timeflow.util.*;
-
 public class FilterNumberPanel  extends FilterDefinitionPanel 
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 906758083829094158L;
 	BabyHistogram histogram;
 	Field field;
 	JTextField lowEntry;

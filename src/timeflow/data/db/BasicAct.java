@@ -1,6 +1,5 @@
 package timeflow.data.db;
 
-import timeflow.data.db.*;
 import timeflow.data.time.*;
 
 import java.net.URL;
@@ -8,7 +7,7 @@ import java.util.*;
 
 public class BasicAct implements Act {
 	
-	private HashMap data=new HashMap();
+	private HashMap<String, Object> data=new HashMap<String, Object>();
 	private ActDB db;
 	
 	public BasicAct(ActDB db)

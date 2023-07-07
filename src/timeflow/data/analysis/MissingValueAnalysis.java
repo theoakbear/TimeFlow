@@ -38,7 +38,7 @@ public class MissingValueAnalysis implements FieldAnalysis {
 	}
 
 	@Override
-	public boolean canHandleType(Class type) {
+	public boolean canHandleType(Class<?> type) {
 		return true;
 	}
 }

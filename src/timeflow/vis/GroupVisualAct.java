@@ -4,7 +4,6 @@ import java.awt.*;
 import java.util.*;
 
 import timeflow.data.db.*;
-import timeflow.model.Display;
 import timeflow.model.VirtualField;
 import timeflow.util.*;
 

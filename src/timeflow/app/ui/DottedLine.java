@@ -5,6 +5,11 @@ import java.awt.*;
 
 public class DottedLine extends JPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 2164668178744378381L;
+
 	public void paintComponent(Graphics g)
 	{
 		int w=getSize().width, h=getSize().height;

@@ -1,20 +1,20 @@
 package timeflow.vis.timeline;
 
-import timeflow.data.db.*;
 import timeflow.data.time.*;
 import timeflow.model.*;
 import timeflow.vis.TimeScale;
 import timeflow.vis.VisualAct;
-import timeflow.vis.timeline.*;
 
-import timeflow.util.*;
 
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
 
 public class TimelineSlider extends ModelPanel {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 6226277197350464221L;
 	TimelineVisuals visuals;
 	Interval original;
 	long minRange;
@@ -88,6 +88,9 @@ public class TimelineSlider extends ModelPanel {
 						break;
 					case END: window().end=Math.max(original.end+timeDiff, original.start+minRange);
 							  window().end=Math.min(window().end, limits.end);
+						break;
+					case NONE:
+						break;
 				}
 				getModel().setViewInterval(window());
 				action.run();
@@ -127,9 +130,7 @@ public class TimelineSlider extends ModelPanel {
 	{
 		int w=getSize().width, h=getSize().height;
 		Graphics2D g=(Graphics2D)g1;
-		
-		long start=System.currentTimeMillis();
-		
+				
 		// draw main backdrop.
 		g.setColor(Color.white);
 		g.fillRect(0,0,w,h);

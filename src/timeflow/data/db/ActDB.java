@@ -13,8 +13,8 @@ public interface ActDB extends Iterable<Act> {
 	
 	public List<String> getFieldKeys();
 	public List<Field> getFields();
-	public List<Field> getFields(Class type);
-	public Field addField(String name, Class type);
+	public List<Field> getFields(Class<?> type);
+	public Field addField(String name, Class<?> type);
 	public Field getField(String name);
 	public void deleteField(Field field);
 	public void setAlias(Field field, String name);

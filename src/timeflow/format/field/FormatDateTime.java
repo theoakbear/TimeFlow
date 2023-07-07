@@ -12,7 +12,7 @@ import timeflow.data.time.TimeUtils;
 
 public class FormatDateTime extends FieldFormat
 {
-	DateTimeGuesser dateGuesser=new DateTimeGuesser();
+	private final DateTimeGuesser dateGuesser=new DateTimeGuesser();
 	
 	@Override
 	public String format(Object o) {
@@ -30,16 +30,15 @@ public class FormatDateTime extends FieldFormat
 	}
 	
 	
-	public RoughTime readTime(Object o) throws ParseException
+	public RoughTime readTime(String o) throws ParseException
 	{
-		if (!(o instanceof String))
-			throw new IllegalArgumentException("Expected String, got: "+o);
-		return dateGuesser.guess((String)o);
+		return dateGuesser.guess(o);
 	}
-	DateTimeGuesser g=new DateTimeGuesser();
 	
 	@Override
 	public double scoreFormatMatch(String s) {
+		DateTimeGuesser g=new DateTimeGuesser();
+
 		if (s==null || s.length()==0)
 			return -.05;
 		try
@@ -68,7 +67,7 @@ public class FormatDateTime extends FieldFormat
 
 
 	@Override
-	public Class getType() {
+	public Class<?> getType() {
 		return RoughTime.class;
 	}
 

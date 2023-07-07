@@ -12,6 +12,10 @@ import java.util.*;
 
 public class ReorderFieldsPanel extends ModelPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 5055355976892649910L;
 	TableView table;
 	
 	public ReorderFieldsPanel(TFModel model)
@@ -61,8 +65,5 @@ public class ReorderFieldsPanel extends ModelPanel
 	}
 
 	@Override
-	public void note(TFEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void note(TFEvent e) {}
 }

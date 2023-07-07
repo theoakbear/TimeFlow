@@ -12,18 +12,17 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
-import javax.swing.text.html.*;
 
-import timeflow.util.*;
-
-import java.net.URI;
-import java.net.URL;
 import java.util.*;
 
 public class ListView extends AbstractView {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 2920347739603567416L;
 	private JEditorPane listDisplay;
-	private JComboBox sortMenu=new JComboBox();
+	private JComboBox<String> sortMenu=new JComboBox<String>();
 	private ActComparator sort;//=ActComparator.byTime();
 	private int maxPerPage=50;
 	private int pageStart=0;
@@ -32,7 +31,7 @@ public class ListView extends AbstractView {
 	private Field sortField;
 	
 	private JLabel pageLabel=new JLabel("Page", JLabel.LEFT);
-	private JComboBox pageMenu=new JComboBox();
+	private JComboBox<String> pageMenu=new JComboBox<String>();
 	private boolean changing=false;
 	
 	private JPanel controls;
@@ -234,7 +233,12 @@ public class ListView extends AbstractView {
 	}
 	
 	static class ArrayRenderer extends DefaultTableCellRenderer {
-	    public void setValue(Object value) {
+	    /**
+		 *
+		 */
+		private static final long serialVersionUID = 2083337287597950719L;
+
+		public void setValue(Object value) {
 	    	setText(Display.arrayToString((Object[])value));
 	    }
 	}

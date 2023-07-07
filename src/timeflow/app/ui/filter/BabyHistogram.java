@@ -2,7 +2,6 @@ package timeflow.app.ui.filter;
 
 import javax.swing.*;
 
-import timeflow.data.time.Interval;
 import timeflow.model.Display;
 
 
@@ -14,6 +13,10 @@ import java.text.*;
 
 
 public class BabyHistogram extends JPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -7014940951669635068L;
 	private int[] buckets;
 	private double[] x;
 	private double min, max;
@@ -124,6 +127,9 @@ public class BabyHistogram extends JPanel {
 					case START: relLow=originalLow+relDiff;
 						break;
 					case END: relHigh=originalHigh+relDiff;
+						break;
+					case NONE:
+						break;
 				}
 				relLow=Math.max(0, relLow);
 				relHigh=Math.min(1, relHigh);
@@ -143,7 +149,6 @@ public class BabyHistogram extends JPanel {
 		int n=x.length;
 		
 		// do some quick checks on the data.
-		boolean positive=true;
 		min=Double.NaN;
 		max=Double.NaN;
 		numDefined=0;
@@ -153,7 +158,6 @@ public class BabyHistogram extends JPanel {
 			if (!Double.isNaN(m))
 			{
 				numDefined++;
-				positive &= m>0;
 				if (Double.isNaN(min))
 				{
 					min=m;

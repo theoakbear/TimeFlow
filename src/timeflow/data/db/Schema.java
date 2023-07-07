@@ -21,10 +21,10 @@ public class Schema implements Iterable<Field> {
     
     public List<String> getKeys()
     {
-    	return new ArrayList(schema.keySet());
+    	return new ArrayList<String>(schema.keySet());
     }
 	
-	public List<Field> getFields(Class type)
+	public List<Field> getFields(Class<?> type)
 	{
 		List<Field> a=new ArrayList<Field>();
 		for (Field s: fieldList)
@@ -70,7 +70,7 @@ public class Schema implements Iterable<Field> {
 		schema.put(name, field);
 	}
 	
-	public Field add(String name, Class type)
+	public Field add(String name, Class<?> type)
 	{
 		return add(new Field(name, type));
 	}
@@ -106,7 +106,9 @@ public class Schema implements Iterable<Field> {
 		Field old=schema.get(name);
 		if (old!=null && old!=field)
 			throw new IllegalArgumentException("Can't rename a field to a name that already exists: "+name);
-		schema.remove(field);
+		// Likely a bug in initial implementation, would have manifested as a memory leak 
+		// schema.remove(field);
+		schema.remove(name);
 		field.setName(name);
 		schema.put(name, field);
 	}

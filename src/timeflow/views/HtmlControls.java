@@ -9,6 +9,11 @@ import timeflow.app.ui.HtmlDisplay;
 
 public class HtmlControls extends JPanel {
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 2573848149122235471L;
+
 	public HtmlControls(String text)
 	{
 		JEditorPane html=HtmlDisplay.create();

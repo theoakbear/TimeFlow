@@ -26,7 +26,7 @@ public class FormatString extends FieldFormat
 	}
 
 	@Override
-	public Class getType() {
+	public Class<?> getType() {
 		return String.class;
 	}
 	

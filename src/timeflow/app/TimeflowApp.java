@@ -5,14 +5,11 @@ import timeflow.app.actions.*;
 import timeflow.app.ui.filter.*;
 import timeflow.data.db.*;
 import timeflow.data.time.RoughTime;
-import timeflow.format.field.*;
 import timeflow.format.file.*;
 import timeflow.model.*;
 import timeflow.views.*;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import timeflow.util.Pad;
 
@@ -25,7 +22,11 @@ import java.util.ArrayList;
 
 public class TimeflowApp extends JFrame
 {
-	public TFModel model=new TFModel();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -9161906129870122223L;
+	public TFModel model = new TFModel();
 	public JFileChooser fileChooser;
 	
 	AboutWindow splash;
@@ -176,7 +177,7 @@ public class TimeflowApp extends JFrame
 		model.addListener(new TFListener() {
 			@Override
 			public void note(TFEvent e) {
-				if (e.type==e.type.DATABASE_CHANGE)
+				if (e.type==TFEvent.Type.DATABASE_CHANGE)
 				{
 					if (center.getCurrentName().equals(intro.getName()))
 					{
@@ -239,7 +240,7 @@ public class TimeflowApp extends JFrame
 		
 		fileMenu.add(save);
 		save.setAccelerator(KeyStroke.getKeyStroke('S',
-			    Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+			    Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx()));
 		save.setEnabled(false);
 		save.addActionListener(new ActionListener() {
 			@Override
@@ -376,7 +377,7 @@ public class TimeflowApp extends JFrame
 	void exportHtml()
 	{
 		int retval = fileChooser.showSaveDialog(this);
-	    if (retval == fileChooser.APPROVE_OPTION)
+	    if (retval == JFileChooser.APPROVE_OPTION)
 	    {   	    	
 	    	String fileName=fileChooser.getSelectedFile().getAbsolutePath();
 	    	try
@@ -398,7 +399,7 @@ public class TimeflowApp extends JFrame
 	void exportDelimited(char delimiter)
 	{
 		int retval = fileChooser.showSaveDialog(this);
-	    if (retval == fileChooser.APPROVE_OPTION)
+	    if (retval == JFileChooser.APPROVE_OPTION)
 	    {   	    	
 	    	String fileName=fileChooser.getSelectedFile().getAbsolutePath();
 	    	try
@@ -419,7 +420,7 @@ public class TimeflowApp extends JFrame
 			return;
         try {
     	    int retval = fileChooser.showOpenDialog(this);
-    	    if (retval == fileChooser.APPROVE_OPTION)
+    	    if (retval == JFileChooser.APPROVE_OPTION)
     	    {
     	    	load(fileChooser.getSelectedFile().getAbsolutePath(), importer, readOnly);
     	    	noteFileUse(fileChooser.getSelectedFile().getAbsolutePath());
@@ -558,7 +559,7 @@ public class TimeflowApp extends JFrame
 		if (current!=null)
 			fileChooser.setSelectedFile(new File(current.getAbsolutePath()+" (copy)"));
 		int retval = fileChooser.showSaveDialog(this);
-	    if (retval == fileChooser.APPROVE_OPTION)
+	    if (retval == JFileChooser.APPROVE_OPTION)
 	    {   	    	
 	    	String fileName=fileChooser.getSelectedFile().getAbsolutePath();
 	    	model.setReadOnly(false);

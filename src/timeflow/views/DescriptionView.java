@@ -11,6 +11,10 @@ import javax.swing.*;
 
 public class DescriptionView extends AbstractView {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 5571363899630538047L;
 	JTextArea content;
 	JComponent controls;
 	

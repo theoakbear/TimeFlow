@@ -5,7 +5,11 @@ import java.awt.*;
 
 public class ComponentCluster extends JPanel
 {
-	int numComps=0;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -434937909766509719L;
+	int numComps = 0;
 	int x1=80;
 	int width=200;
 	int compH=30;

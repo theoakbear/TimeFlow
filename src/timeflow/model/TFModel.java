@@ -209,7 +209,7 @@ public class TFModel {
 		display.refreshColors(top25);
 	}
 	
-	private void guessField(String name, String[] guesses, Class type)
+	private void guessField(String name, String[] guesses, Class<?> type)
 	{
 		Field field=db.getField(name);
 		if (field==null)
@@ -234,14 +234,14 @@ public class TFModel {
 		}
 	}
 	
-	private void fireEvent(TFEvent e)
+	private void fireEvent(final TFEvent e)
 	{
 		// clone list before going through it, because some events can cause
 		// listeners to be added or removed.
-		
-		for (TFListener t: (List<TFListener>)listeners.clone())
-			if (t!=e.origin)
-				t.note(e);				
+		listeners.stream().filter(l -> l != e.origin).forEach(t -> t.note(e));
+		// for (TFListener t: (List<TFListener>)listeners.clone())
+		// 	if (t!=e.origin)
+		// 		t.note(e);				
 	}
 
 	public void setFieldAlias(Field field, String alias, Object origin)

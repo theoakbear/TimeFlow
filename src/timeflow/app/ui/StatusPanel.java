@@ -3,7 +3,6 @@ package timeflow.app.ui;
 import timeflow.model.*;
 import timeflow.app.ui.filter.FilterControlPanel;
 import timeflow.data.db.*;
-import timeflow.data.db.filter.ActFilter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,8 +12,17 @@ import java.text.*;
 
 public class StatusPanel extends ModelPanel
 {
-	JLabel numLabel=new JLabel("")
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -2066958902387427436L;
+	JLabel numLabel = new JLabel("")
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = -5940506473842603903L;
+
 		public Dimension getPreferredSize()
 		{
 			return new Dimension(30,25);
@@ -22,6 +30,11 @@ public class StatusPanel extends ModelPanel
 	};
 	JLabel filterLabel=new JLabel("")
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = -5515094553256107609L;
+
 		public Dimension getPreferredSize()
 		{
 			return new Dimension(30,25);

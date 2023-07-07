@@ -2,7 +2,6 @@ package timeflow.format.field;
 
 import timeflow.data.time.*;
 
-import java.util.*;
 import java.text.*;
 
 
@@ -26,6 +25,10 @@ public class DateTimeParser {
 		return f;
 	}
 	
+	public String getDatePattern() {
+		return pattern;
+	}
+
 	public TimeUnit getUnits()
 	{
 		return units;

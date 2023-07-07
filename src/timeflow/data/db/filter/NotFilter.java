@@ -1,6 +1,5 @@
 package timeflow.data.db.filter;
 
-import java.util.*;
 
 import timeflow.data.db.Act;
 

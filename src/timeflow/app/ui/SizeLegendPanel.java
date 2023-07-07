@@ -2,14 +2,15 @@ package timeflow.app.ui;
 
 import timeflow.model.*;
 import timeflow.data.db.*;
-import timeflow.data.time.*;
-
-import timeflow.util.*;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 public class SizeLegendPanel extends ModelPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -2163286954856457284L;
 	Field sizeField;
 	double min, max;
 
@@ -78,7 +79,6 @@ public class SizeLegendPanel extends ModelPanel {
 				String rightLabel=format(max);
 				g.setFont(display.tiny());
 				int lw=display.tinyFontMetrics().stringWidth(leftLabel);
-				int rw=display.tinyFontMetrics().stringWidth(rightLabel);
 				g.setColor(Color.black);
 				int ty=h/2+5;;
 				g.drawString(leftLabel,2,ty);

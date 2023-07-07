@@ -7,12 +7,12 @@ import java.util.*;
 public class FieldValueSetFilter extends ActFilter implements ValueFilter {
 
 	private Field field;
-	private Set valueSet;
+	private Set<Object> valueSet;
 	
 	public FieldValueSetFilter(Field field)
 	{
 		this.field=field;
-		valueSet=new HashSet();
+		valueSet=new HashSet<Object>();
 	}
 	
 	public void addValue(Object value)

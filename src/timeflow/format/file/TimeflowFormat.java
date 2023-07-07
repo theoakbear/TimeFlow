@@ -2,13 +2,11 @@ package timeflow.format.file;
 
 import timeflow.model.*;
 import timeflow.data.db.*;
-import timeflow.data.time.*;
 import timeflow.format.field.*;
 
 import timeflow.util.*;
 
 import java.io.*;
-import java.net.URL;
 import java.util.*;
 
 public class TimeflowFormat implements Import, Export
@@ -29,7 +27,7 @@ public class TimeflowFormat implements Import, Export
 
 		ActDB db=null;
 		List<String> fieldNames=new ArrayList<String>();
-		List<Class> fieldTypes=new ArrayList<Class>();
+		List<Class<?>> fieldTypes=new ArrayList<Class<?>>();
 		List<Integer> fieldSizes=new ArrayList<Integer>();
 		String source="[unknown]", description="";
 		for (;;)

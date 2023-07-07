@@ -36,7 +36,7 @@ public class ArrayDB implements ActDB {
 	}
 
 	
-	public ArrayDB(String[] fieldNames, Class[] types, String source)
+	public ArrayDB(String[] fieldNames, Class<?>[] types, String source)
 	{
 		this.schema=new Schema();
 		this.source=source;
@@ -55,7 +55,7 @@ public class ArrayDB implements ActDB {
 	}
 	
 	@Override
-	public Field addField(String name, Class type) {
+	public Field addField(String name, Class<?> type) {
 		
 		int n=fields.length;
 
@@ -148,7 +148,7 @@ public class ArrayDB implements ActDB {
 	}
 
 	@Override
-	public List<Field> getFields(Class type) {
+	public List<Field> getFields(Class<?> type) {
 		return schema.getFields(type);
 	}
 

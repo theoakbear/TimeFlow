@@ -5,13 +5,16 @@ import timeflow.model.*;
 import timeflow.views.*;
 
 import javax.swing.*;
-import javax.swing.table.*;
 
 import java.awt.*;
 import java.util.*;
 
 public class MassDeletePanel extends ModelPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 3861414794020044294L;
 	TableView table;
 	ActList keepers;
 	
@@ -73,8 +76,5 @@ public class MassDeletePanel extends ModelPanel
 	}
 
 	@Override
-	public void note(TFEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void note(TFEvent e) {}
 }

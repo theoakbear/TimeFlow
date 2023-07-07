@@ -4,8 +4,6 @@ import timeflow.model.*;
 import timeflow.data.time.*;
 import timeflow.data.db.*;
 import timeflow.data.db.filter.*;
-import timeflow.format.field.*;
-import timeflow.format.file.TimeflowFormat;
 
 import javax.swing.*;
 import java.util.*;
@@ -15,6 +13,10 @@ import java.awt.event.*;
 
 public class DateFieldPanel extends JPanel
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -5452005316316113435L;
 	TFModel model;
 	int numRows;
 	HashMap<String, Integer> numBad=new HashMap<String, Integer>();
@@ -87,9 +89,13 @@ public class DateFieldPanel extends JPanel
 	
 	class FieldMap extends JPanel
 	{
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = -668962970376296909L;
 		String name;
 		int bad;
-		JComboBox choices;
+		JComboBox<String> choices;
 		JLabel definedLabel=new JLabel("# def goes here");
 		boolean important;
 		
@@ -102,7 +108,7 @@ public class DateFieldPanel extends JPanel
 			
 			add(new JLabel("   "+(important? "* ":"")+VirtualField.humanName(name)));//, BorderLayout.NORTH);
 			
-			choices=new JComboBox();
+			choices=new JComboBox<String>();
 			choices.addItem("None");
 			for (Field f: model.getDB().getFields(RoughTime.class))
 			{				

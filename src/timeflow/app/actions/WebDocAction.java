@@ -1,17 +1,16 @@
 package timeflow.app.actions;
 
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 
-import javax.swing.Action;
-import javax.swing.JOptionPane;
-import javax.swing.KeyStroke;
-
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.ReorderFieldsPanel;
 import timeflow.model.Display;
 
 public class WebDocAction extends TimeflowAction {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -2416264206963874525L;
+
 	public WebDocAction(TimeflowApp app)
 	{
 		super(app, "Documentation & License Info...", null, "Read web documentation.");

@@ -1,14 +1,11 @@
 package timeflow.views;
 
-import timeflow.app.ui.HtmlDisplay;
 import timeflow.data.db.*;
 import timeflow.data.time.*;
 import timeflow.format.field.DateTimeGuesser;
 import timeflow.model.*;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.event.TableModelListener;
@@ -17,7 +14,11 @@ import java.util.*;
 
 public class TableView extends AbstractView {
 
-	private JTable table=new JTable();
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 2853574104830468889L;
+	private JTable table = new JTable();
 	private int colorColumn=-1, labelColumn=-1;
 	private Font font, bold;
 	private boolean editable=true;
@@ -94,6 +95,10 @@ public class TableView extends AbstractView {
 	
 	class ActTableRenderer extends DefaultTableCellRenderer {
 		
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 1216864529835725930L;
 		ActList acts;
 		Color zebra=new Color(240,240,240);
 		boolean color=false;
@@ -221,7 +226,11 @@ public class TableView extends AbstractView {
 	
 	public class StringArrayEditor extends AbstractCellEditor implements TableCellEditor 
 	{
-	    JComponent component = new JTextField();
+	    /**
+		 *
+		 */
+		private static final long serialVersionUID = -6537183049917262267L;
+		JComponent component = new JTextField();
 
 	    public Component getTableCellEditorComponent(JTable table, Object value,
 	            boolean isSelected, int rowIndex, int vColIndex) {
@@ -241,7 +250,11 @@ public class TableView extends AbstractView {
 	
 	public class RoughTimeEditor extends AbstractCellEditor implements TableCellEditor 
 	{
-	    JComponent component = new JTextField();
+	    /**
+		 *
+		 */
+		private static final long serialVersionUID = 4206333416594636911L;
+		JComponent component = new JTextField();
 	    DateTimeGuesser guesser=new DateTimeGuesser();
 
 	    public Component getTableCellEditorComponent(JTable table, Object value,

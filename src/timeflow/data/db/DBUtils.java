@@ -133,7 +133,7 @@ public class DBUtils {
 			{
 				RoughTime r=a.getTime(field);
 				if (r!=null)
-					list.add(new Double(r.getTime()));
+					list.add(Double.valueOf(r.getTime()));
 			}
 		}
 		int n=list.size();
@@ -182,7 +182,7 @@ public class DBUtils {
 		}
 	}
 
-	public static Field ensureField(ActDB db, String name, Class type)
+	public static Field ensureField(ActDB db, String name, Class<?> type)
 	{
 		Field f=db.getField(name);
 		if (f==null)

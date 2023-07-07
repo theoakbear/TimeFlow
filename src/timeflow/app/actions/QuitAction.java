@@ -2,15 +2,15 @@ package timeflow.app.actions;
 
 import timeflow.model.*;
 import timeflow.app.TimeflowApp;
-import timeflow.app.ui.*;
-import timeflow.data.db.*;
-import timeflow.format.field.FieldFormatCatalog;
 
 import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
 
 public class QuitAction extends TimeflowAction {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 8255953180052170268L;
 
 	public QuitAction(TimeflowApp app, TFModel model)
 	{

@@ -1,9 +1,8 @@
 package timeflow.data.time;
 
-import java.util.Calendar;
 import java.util.Date;
 
-public class RoughTime implements Comparable {
+public class RoughTime implements Comparable<RoughTime> {
 
 	public static final long UNKNOWN=Long.MIN_VALUE;
 	private TimeUnit units;
@@ -120,8 +119,8 @@ public class RoughTime implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		return compare(this, (RoughTime)o);
+	public int compareTo(RoughTime o) {
+		return compare(this, o);
 	}
 
 
